@@ -73,6 +73,23 @@ wget https://www.tenable.com/downloads/api/v1/public/pages/nessus/downloads/NESS
 sudo dpkg -i NESSUS_VERSION.deb
 sudo systemctl start nessusd
 
+###  To check if the Nessus server is running on Kali Linux, follow these steps:
+sudo systemctl status nessusd
+sudo systemctl enable nessusd
+sudo systemctl start nessusd
+
+### If you already have it, but you forgot your password, run these cmd in your CLI:
+sudo systemctl stop nessusd   ## to stop
+sudo /opt/nessus/sbin/nessuscli chpasswd ## to reset
+
+Login : admin
+New password:
+
+sudo systemctl start nessusd ### to start your machine
+
+
+
+
 On Windows / macOS:
  • Download the installer from: https://www.tenable.com/downloads/nessus
  • Follow the setup wizard
